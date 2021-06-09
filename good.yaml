@@ -1,3 +1,4 @@
+---
 apiVersion: tekton.dev/v1beta1
 kind: Pipeline
 metadata:
@@ -16,7 +17,7 @@ spec:
       params:
         - name: url
           value: https://github.com/upslopeio/lint-markdown-files
-    - name: md-lint-run #lint mardown
+    - name: md-lint-run
       taskRef:
         name: markdown-lint
       runAfter:
@@ -27,4 +28,3 @@ spec:
       params:
         - name: args
           value: ["."]
-
